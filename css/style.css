@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'digital';
+    src: url(../fonts/digital.ttf);
+}
+tbody, td, tfoot, th, thead, tr {
+	border-color: #ddd !important;
+}
+
+.table.std-info > :not(caption) > * > * {
+	padding: 0 .2rem;
+
+}
+.form-control:focus {
+	box-shadow: none !important;
+}
+.btn-primary:focus,.btn-info:focus, .btn-warning:focus,.btn-danger:focus  {
+	box-shadow: none !important;
+}
+.social i {
+	font-size: 35px;
+	padding: 10px 8px;
+}

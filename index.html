@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/a3c4254f4a.css"> -->
+
+    <!-- Bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Assignment-19</title>
+</head>
+
+<body>
+
+  <div class="section my-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-10 m-auto">
+                  <div class="card shadow">
+                      <div class="card-title my-3 ms-5">
+                       <a class="btn btn-primary" data-bs-toggle ="modal" href="#add_modal">Add New Member</a>
+                      </div>
+                      <div class="card-body">
+                          <table class="table table-striped">
+                              <thead>
+                                  <tr>
+                                    <th>S/N</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <!-- <th>Skill</th> -->
+                                    <th>Salary</th>
+                                    <th>Photo</th>
+                                    <th>Action</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="devs_show">
+                                 
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- modal-add  -->
+  <div class="modal fade" id="add_modal"> 
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class ="text-center d-block w-100">Add New Team Member</h3>
+              </div>
+              <div class="modal-body">
+                  <form id="add_new_member">
+                      <div class="form-group mb-2">
+                          <input type="text" name ="name" class="form-control" placeholder="Member Name">
+                      </div>
+                      <div class="form-group mb-2">
+                        <input type="email" name ="email" class="form-control" placeholder="Member Email">
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" name ="mobile" class="form-control" placeholder="Member Mobile No.">
+                    </div>
+                    <div class="form-group mb-2">
+                        <select name="skill" class="form-control" id="skill_list">
+                            <option value="">-Select Skill-</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" name ="img" class="form-control" placeholder="Member Photo">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-2">
+                                <input type="text" name ="salary" class="form-control" placeholder="Member Salary">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-2">
+                                <input type="text" name ="age" class="form-control" placeholder="Member Age">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <textarea type="text" name ="bio" class="form-control" placeholder="Member Bio"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary w-100" value="Add Member">
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<!-- view Modal  -->
+<div class="modal fade" id="view_modal"> 
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class ="text-center d-block w-100">Member Details</h3>
+            </div>
+            <div class="modal-body text-center">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- edit modal  -->
+<div class="modal fade" id="edit"> 
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class ="text-center d-block w-100">Member Profile Edit</h3>
+            </div>
+            <div class="modal-body">
+                <form id="edit_member">
+                    <div class="form-group mb-2">
+                        <input type="hidden" name ="eedit-id" class="form-control">
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" name ="ename" class="form-control" placeholder="Member Name">
+                    </div>
+                    <div class="form-group mb-2">
+                      <input type="email" name ="eemail" class="form-control" placeholder="Member Email">
+                  </div>
+                  <div class="form-group mb-2">
+                      <input type="text" name ="emobile" class="form-control" placeholder="Member Mobile No.">
+                  </div>
+                  <div class="form-group mb-2">
+                      <input name="eskill" class="form-control" id="skill_list">
+                  </div>
+                  <img style="width: 150px; height: auto" class="img-rounded mb-3" id="preview" src="" alt="">
+                  <div class="form-group mb-2">
+                      <input type="text" name ="eimg" class="form-control" placeholder="Member Photo">
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group mb-2">
+                              <input type="text" name ="esalary" class="form-control" placeholder="Member Salary">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group mb-2">
+                              <input type="text" name ="eage" class="form-control" placeholder="Member Age">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group mb-3">
+                      <textarea type="text" name ="ebio" class="form-control" placeholder="Member Bio"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <input type="submit" class="btn btn-primary w-100" value="Update">
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Member Delete  -->
+<!-- <div class="modal fade" id="delete"> 
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class ="text-center d-block w-100">Member Delete</h3>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div> -->
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/function.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

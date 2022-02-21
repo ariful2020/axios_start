@@ -1,0 +1,29 @@
+{
+  "devs": [],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Mern Stack"
+    },
+    {
+      "id": 2,
+      "name": "PHP Developer"
+    },
+    {
+      "id": 3,
+      "name": "Python Developer"
+    },
+    {
+      "id": 4,
+      "name": "Java Developer"
+    },
+    {
+      "id": 5,
+      "name": "Laravel Developer"
+    },
+    {
+      "id": 6,
+      "name": "Django Developer"
+    }
+  ]
+}

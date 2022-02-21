@@ -1,0 +1,14 @@
+{
+  "name": "team_api",
+  "version": "1.0.0",
+  "description": "This Is Our Team Rest API for Android and React Developer",
+  "main": "index.js",
+  "scripts": {
+    "team": "json-server --watch db.json --port 5050"
+  },
+  "author": "Ariful Islam Noyon",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
